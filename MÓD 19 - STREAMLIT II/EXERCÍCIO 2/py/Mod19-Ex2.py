@@ -46,14 +46,14 @@ def to_excel(df):
 # Função principal da aplicação
 def main():
     st.set_page_config(page_title = 'Telemarketing analisys', \
-        page_icon = '../img/telmarketing_icon.png',
+        page_icon = 'https://github.com/heberrossi/Curso_CientistaDeDados_EBAC_Exercicios/blob/main/MÓD%2019%20-%20STREAMLIT%20II/EXERCÍCIO%202/img/telmarketing_icon.png',
         layout="wide",
         initial_sidebar_state='expanded'
     )
     st.write('# Telemarketing analisys')
     st.markdown("---")
     
-    image = Image.open('../img/Bank-Branding.jpg')
+    image = Image.open('https://github.com/heberrossi/Curso_CientistaDeDados_EBAC_Exercicios/blob/main/MÓD%2019%20-%20STREAMLIT%20II/EXERCÍCIO%202/img/Bank-Branding.jpg')
     st.sidebar.image(image)
 
     # Botão para carregar arquivo na aplicação
