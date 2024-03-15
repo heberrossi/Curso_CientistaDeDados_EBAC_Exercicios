@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import requests
 
 # from PIL import Image
 from PIL                 import Image
@@ -52,9 +53,13 @@ def main():
     )
     st.write('# Telemarketing analisys')
     st.markdown("---")
-    
-    image = Image.open('https://github.com/heberrossi/Curso_CientistaDeDados_EBAC_Exercicios/blob/main/MÓD%2019%20-%20STREAMLIT%20II/EXERCÍCIO%202/img/Bank-Branding.jpg')
-    st.sidebar.image(image)
+
+    image_url = 'https://raw.githubusercontent.com/heberrossi/Curso_CientistaDeDados_EBAC_Exercicios/main/M%C3%93D%2019%20-%20STREAMLIT%20II/EXERC%C3%8DCIO%202/img/Bank-Branding.jpg'
+
+    response = requests.get(image_url)
+    image = Image.open(BytesIO(response.content))
+
+    st.sidebar.image(image_url)
 
     # Botão para carregar arquivo na aplicação
     st.sidebar.write("## Suba o arquivo")
